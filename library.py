@@ -87,3 +87,5 @@ class Library:
             for book_id, book in self.books.items()
             if book['available'] > 0
         ]
+    def count_available_copies(self):
+        return sum(book["available"] for book in self.books.values())
