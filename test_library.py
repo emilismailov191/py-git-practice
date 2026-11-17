@@ -48,6 +48,17 @@ class TestLibrary(unittest.TestCase):
 
     def test_search_case_insensitive(self):
         self.assertEqual(len(self.library.search_books("ЧИСТЫЙ")), 1)
+    
+    def test_add_reader_validation(self):
+        with self.assertRaises(ValueError):
+            self.library.add_reader(0, "Иван")
+
+        with self.assertRaises(ValueError):
+            self.library.add_reader(11, "")
+
+        with self.assertRaises(ValueError):
+            self.library.add_reader(10, "Иван")
+            self.library.add_reader(10, "Пётр")
 
 
 if __name__ == "__main__":

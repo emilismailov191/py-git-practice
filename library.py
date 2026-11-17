@@ -49,9 +49,14 @@ class Library:
         return book_id in self.books and self.books[book_id]["available"] > 0
 
     def add_reader(self, reader_id, name):
+        if not isinstance(reader_id, int) or reader_id <= 0:
+            raise ValueError("ID читателя должен быть положительным числом")
         if reader_id in self.readers:
             raise ValueError("Читатель уже существует")
-        self.readers[reader_id] = name
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError("Имя читателя не может быть пустым")
+
+        self.readers[reader_id] = name.strip()
 
     def loan_book(self, reader_id, book_id):
         if reader_id not in self.readers:
