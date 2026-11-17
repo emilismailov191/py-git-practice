@@ -1,9 +1,19 @@
+# Python
 __pycache__/
 *.py[cod]
-*.log
-.env
+*.pyo
+
+# Тесты
+.pytest_cache/
+.coverage
+
+# Виртуальное окружение
 venv/
 .venv/
-logs/
-uploads/
+
+# IDE
+.vscode/
+
+# Системные файлы
 .DS_Store
+Thumbs.db
