@@ -1,5 +1,9 @@
 @'
+<<<<<<< HEAD
 # Library Management System - Develop Branch
+=======
+# Library Management System - Feature Branch
+>>>>>>> feature/docs
 
 Мини-система управления библиотекой на Python.
 
