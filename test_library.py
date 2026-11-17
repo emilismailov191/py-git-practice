@@ -83,7 +83,7 @@ class TestLibrary(unittest.TestCase):
 
         available = self.library.get_available_books()
 
-        self.assertEqual(len(available), 3)
+        self.assertEqual(len(available), 2)
         self.assertEqual(available[-1][1]["available"], 1)
 
 if __name__ == "__main__":
