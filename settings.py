@@ -1,4 +1,4 @@
 SETTINGS = {
-    "app_name": "Main Portal",
+    "app_name": "University Portal",
     "debug": False,
 }
