@@ -61,8 +61,11 @@ class Library:
     def loan_book(self, reader_id, book_id):
         if reader_id not in self.readers:
             raise ValueError("Читатель не найден")
+        if book_id not in self.books:
+            raise ValueError("Книга не найдена")
         if not self.is_available(book_id):
             raise ValueError("Нет доступных экземпляров")
+
         self.books[book_id]["available"] -= 1
         self.loans.setdefault(reader_id, []).append(book_id)
 

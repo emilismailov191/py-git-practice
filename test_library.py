@@ -60,6 +60,16 @@ class TestLibrary(unittest.TestCase):
             self.library.add_reader(10, "Иван")
             self.library.add_reader(10, "Пётр")
 
+    def test_loan_nonexistent_book(self):
+        self.library.add_reader(10, "Иван")
+
+        with self.assertRaises(ValueError):
+            self.library.loan_book(10, 999)
+
+    def test_loan_without_reader(self):
+        with self.assertRaises(ValueError):
+            self.library.loan_book(999, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
