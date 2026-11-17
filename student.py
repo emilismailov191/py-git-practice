@@ -6,4 +6,5 @@ class Student:
         self.average_grade = average_grade
 
     def describe(self):
+        """Возвращает краткую информацию о студенте."""
         return f"{self.name}, группа {self.group}, средний балл {self.average_grade}"
