@@ -25,6 +25,16 @@ class TestLibrary(unittest.TestCase):
         self.assertTrue(self.library.remove_book(1))
         self.assertFalse(self.library.is_available(1))
 
+    def test_add_book_validation(self):
+        with self.assertRaises(ValueError):
+            self.library.add_book(1, "Другая книга", "Автор")
+
+        with self.assertRaises(ValueError):
+            self.library.add_book(2, "", "Автор")
+
+        with self.assertRaises(ValueError):
+            self.library.add_book(3, "Книга", "Автор", 0)
+
 
 if __name__ == "__main__":
     unittest.main()
