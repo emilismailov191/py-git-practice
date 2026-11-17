@@ -25,6 +25,13 @@ class TestLibrary(unittest.TestCase):
         self.assertTrue(self.library.remove_book(1))
         self.assertFalse(self.library.is_available(1))
 
+    def test_cannot_remove_loaned_book(self):
+        self.library.add_reader(10, "Иван")
+        self.library.loan_book(10, 1)
+
+        with self.assertRaises(ValueError):
+            self.library.remove_book(1)
+
     def test_add_book_validation(self):
         with self.assertRaises(ValueError):
             self.library.add_book(1, "Другая книга", "Автор")
