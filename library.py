@@ -77,3 +77,6 @@ class Library:
 
         if book_id in self.books:
             self.books[book_id]["available"] += 1
+
+    def count_books(self):
+        return len(self.books)
