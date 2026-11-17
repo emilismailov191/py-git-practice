@@ -70,12 +70,12 @@ class TestLibrary(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.library.loan_book(999, 1)
 
+    def test_count_books(self):
+        library = Library()
+        library.add_book(1, "Book 1", "Author 1")
+        library.add_book(2, "Book 2", "Author 2")
+        self.assertEqual(library.count_books(), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
-
-    def test_count_books(self):
-        library = Library()
-        library.add_book(1, 'Book 1', 'Author 1')
-        library.add_book(2, 'Book 2', 'Author 2')
-        self.assertEqual(library.count_books(), 2)
