@@ -80,3 +80,10 @@ class Library:
 
     def count_books(self):
         return len(self.books)
+
+    def get_available_books(self):
+        return [
+            (book_id, book.copy())
+            for book_id, book in self.books.items()
+            if book['available'] > 0
+        ]
