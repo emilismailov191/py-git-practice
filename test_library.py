@@ -77,12 +77,11 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(library.count_books(), 2)
 
     def test_get_available_books(self):
-        self.library.add_book(1, "Book 1", "Author 1", 2)
-        self.library.add_book(2, "Book 2", "Author 2", 1)
-        self.library.loan_book(10, 1)
+        self.library.add_book(3, "Book 3", "Author 3", 2)
+        self.library.loan_book(10, 3)
         available = self.library.get_available_books()
-        self.assertEqual(len(available), 2)
-        self.assertEqual(available[0][1]["available"], 1)
+        self.assertEqual(len(available), 3)
+        self.assertEqual(available[-1][1]["available"], 1)
 
 
 if __name__ == "__main__":
