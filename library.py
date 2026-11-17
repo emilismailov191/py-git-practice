@@ -5,10 +5,17 @@ class Library:
         self.loans = {}
 
     def add_book(self, book_id, title, author, copies=1):
+        if not isinstance(book_id, int) or book_id <= 0:
+            raise ValueError("ID книги должен быть положительным числом")
         if book_id in self.books:
             raise ValueError("Книга с таким ID уже существует")
-        if not title.strip() or copies < 1:
-            raise ValueError("Название и количество экземпляров должны быть корректными")
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError("Название книги не может быть пустым")
+        if not isinstance(author, str) or not author.strip():
+            raise ValueError("Имя автора не может быть пустым")
+        if not isinstance(copies, int) or copies < 1:
+            raise ValueError("Количество экземпляров должно быть положительным числом")
+
         self.books[book_id] = {
             "title": title.strip(),
             "author": author.strip(),
