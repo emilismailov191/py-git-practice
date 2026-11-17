@@ -3,6 +3,7 @@ from calculator import Calculator
 
 
 class TestCalculator(unittest.TestCase):
+    """Тестирование всех операций калькулятора."""
     def setUp(self):
         self.calc = Calculator()
 
