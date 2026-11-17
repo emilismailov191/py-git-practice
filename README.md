@@ -1,5 +1,5 @@
 @'
-# Library Management System
+# Library Management System - Develop Branch
 
 Мини-система управления библиотекой на Python.
 
