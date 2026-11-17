@@ -72,5 +72,8 @@ class Library:
     def return_book(self, reader_id, book_id):
         if reader_id not in self.loans or book_id not in self.loans[reader_id]:
             raise ValueError("Эта книга не числится за читателем")
+
         self.loans[reader_id].remove(book_id)
-        self.books[book_id]["available"] += 1
+
+        if book_id in self.books:
+            self.books[book_id]["available"] += 1
