@@ -1,29 +1,37 @@
-@'
-<<<<<<< HEAD
-# Library Management System - Develop Branch
-=======
-# Library Management System - Feature Branch
->>>>>>> feature/docs
+﻿# Library Management System
 
 Мини-система управления библиотекой на Python.
 
 ## Возможности
 
-- Добавление книг
-- Удаление книг
+- Добавление и удаление книг
 - Поиск книг по названию
 - Просмотр списка книг
 - Проверка доступности книг
 - Регистрация читателей
 - Выдача и возврат книг
+- Подсчёт книг и доступных экземпляров
 
 ## Требования
 
 Python 3.8 или выше.
 
-## Запуск
+## Запуск тестов
 
-Запуск тестов:
-
-```bash
 py -m unittest test_library.py
+
+## Структура проекта
+
+- library.py — основная логика библиотеки
+- test_library.py — автоматические тесты
+
+## Git
+
+- main — стабильная версия
+- develop — основная разработка
+- feature/books — управление книгами
+- feature/search — поиск
+- feature/users — читатели
+- feature/loans — выдача и возврат
+- hotfix/validation — исправление ошибок
+- feature/statistics — статистика библиотеки
