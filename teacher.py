@@ -6,4 +6,5 @@ class Teacher:
         self.experience = experience
 
     def describe(self):
+        """Возвращает краткую информацию о преподавателе."""
         return f"{self.name}, предмет {self.subject}, стаж {self.experience} лет"
