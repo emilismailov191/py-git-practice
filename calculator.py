@@ -1,4 +1,5 @@
 class Calculator:
+    """Класс для выполнения арифметических операций."""
     def add(self, a, b):
         return a + b
 
