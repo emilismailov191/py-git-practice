@@ -42,6 +42,13 @@ class TestLibrary(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.library.add_book(3, "Книга", "Автор", 0)
 
+    def test_search_empty_query(self):
+        self.assertEqual(self.library.search_books(""), [])
+        self.assertEqual(self.library.search_books("   "), [])
+
+    def test_search_case_insensitive(self):
+        self.assertEqual(len(self.library.search_books("ЧИСТЫЙ")), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -32,7 +32,10 @@ class Library:
         return True
 
     def search_books(self, title):
-        query = title.casefold()
+        if not isinstance(title, str) or not title.strip():
+            return []
+
+        query = title.strip().casefold()
         return [
             (book_id, book.copy())
             for book_id, book in self.books.items()
